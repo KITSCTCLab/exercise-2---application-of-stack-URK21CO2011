@@ -18,27 +18,28 @@ class Evaluate:
     self.stack = []
 
 
-  def isEmpty(self):
-    if (top == -1):
-      return True
-    else:
-      return False
+  
     """
     Check whether the stack is empty.
     Returns:
       True if it is empty, else returns False.
     """
       # Write your code here
+def isEmpty(self):
+    if (self.top == -1):
+      return True
+    else:
+      return False
 
-
-  def pop(self):
+  def pop(self, data):
     """
     Do pop operation if the stack is not empty.
     Returns:
       The data which is popped out if the stack is not empty.
     """
-    # Write your code here
-
+    if isEmpty(self):
+      return 
+      
 
   def push(self, operand):
     """
