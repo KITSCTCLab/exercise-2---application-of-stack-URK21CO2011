@@ -1,82 +1,49 @@
-class Evaluate:
-  """This class validates and evaluate postfix expression.
-  Attributes:
-      top: An integer which denotes the index of the element at the top of the stack currently.
-      size_of_stack: An integer which represents the size of stack.
-      stack: A List which acts as a Stack.
-  """
-    # Write your code here
+import os
+	class Stack:
+	    def __init__(self, size):
+	        self.items = []
+	        self.size = size
+	
 
+	    def is_empty(self):
+	        # Write code here
+	        if len(self.items) == 0:
+	            return True
+	
 
-  def __init__(self, size):
-    """Inits Evaluate with top, size_of_stack and stack.
-    Arguments:
-      size_of_stack: An integer to set the size of stack.
-    """
-    self.top = -1
-    self.size_of_stack = size
-    self.stack = []
+	    def is_full(self):
+	        # Write code here
+	        if len(self.items) >= size:
+	            return True
+	
 
+	    def push(self, data):
+	        if not self.is_full():
+	            # Write code here
+	            self.items.append(data)
+	
 
-  
-    """
-    Check whether the stack is empty.
-    Returns:
-      True if it is empty, else returns False.
-    """
-      # Write your code here
-def isEmpty(self):
-    if (self.top == -1):
-      return True
-    else:
-      return False
+	    def pop(self):
+	        if not self.is_empty():
+	            # Write code here
+	            x = self.items.pop()
+	            return x
+	
 
-  def pop(self, data):
-    """
-    Do pop operation if the stack is not empty.
-    Returns:
-      The data which is popped out if the stack is not empty.
-    """
-    if isEmpty(self):
-      return 
-      
+	    def status(self):
+	        # Write code here
+	        for item in self.items:
+	            print(item)
+	
 
-  def push(self, operand):
-    """
-    Push the operand to stack if the stack is not full.
-    Arguments:
-      operand: The operand to be pushed.
-    """
-    # Write your code here
+	# Do not change the following code
+	size, queries = map(int, input().rstrip().split())
+	stack = Stack(size)
+	for line in range(queries):
+	    values = list(map(int, input().rstrip().split()))
+	    if values[0] == 1:
+	        stack.push(values[1])
+	    elif values[0] == 2:
+	        stack.pop()
+	stack.status()
 
-
-  def validate_postfix_expression(self, expression):
-    """
-    Check whether the expression is a valid postfix expression.
-    Arguments:
-      expression: A String which represents the expression to be validated.
-    Returns:
-      True if the expression is valid, else returns False.
-    """
-    # Write your code here
-
-
-  def evaluate_postfix_expression(self, expression):
-    """
-    Evaluate the postfix expression
-    Arguments:
-      expression: A String which represents the the expression to be evaluated
-    Returns:
-      The result of evaluated postfix expression.
-    """
-    # Write your code here
-
-
-# Do not change the following code
-postfix_expression = input()  # Read postfix expression
-tokens = postfix_expression.split()
-evaluate = Evaluate(len(tokens))
-if evaluate.validate_postfix_expression(tokens):
-    print(evaluate.evaluate_postfix_expression(tokens))
-else:
-    print('Invalid postfix expression')
